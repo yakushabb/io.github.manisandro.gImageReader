@@ -6,6 +6,13 @@ command: gimagereader-gtk
 rename-desktop-file: gimagereader-gtk.desktop
 rename-appdata-file: gimagereader-gtk.appdata.xml
 rename-icon: gimagereader
+add-extensions:
+  io.github.manisandro.gImageReader.tessdata:
+    directory: share/tessdata
+    version: stable
+    versions: stable;beta;test
+    no-autodownload: true
+    autodelete: true
 
 finish-args:
   - --share=ipc
@@ -128,46 +135,6 @@ modules:
               project-id: 10159
               stable-only: true
               url-template: https://downloads.sourceforge.net/djvu/djvulibre-$version.tar.gz
-
-      - name: tesseract
-        buildsystem: autotools
-        config-opts:
-          - --disable-graphics
-        modules:
-          - name: libleptonica
-            buildsystem: autotools
-            sources:
-              - type: archive
-                url: https://github.com/DanBloomberg/leptonica/releases/download/1.83.0/leptonica-1.83.0.tar.gz
-                sha256: 206591dd58cf84ef380836dad133b58c9d1af92491f5a9825c346a162044bcfe
-                x-checker-data:
-                  type: anitya
-                  project-id: 1549
-                  url-template: https://github.com/DanBloomberg/leptonica/releases/download/$version/leptonica-$version.tar.gz
-
-        sources:
-          - type: archive
-            url: https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.3.0.tar.gz
-            sha256: 7e70870f8341e5ea228af2836ce79a36eefa11b01b56177b4a8997f330c014b8
-            x-checker-data:
-              type: anitya
-              project-id: 4954
-              url-template: https://github.com/tesseract-ocr/tesseract/archive/refs/tags/$version.tar.gz
-
-      - name: tessdata
-        buildsystem: simple
-        build-commands:
-          - rm -rf ${FLATPAK_DEST}/share/tessdata
-          - mkdir -p ${FLATPAK_DEST}/share/tessdata
-          - cp -av * ${FLATPAK_DEST}/share/tessdata/
-        sources:
-          - type: archive
-            url: https://github.com/tesseract-ocr/tessdata_best/archive/refs/tags/4.1.0.tar.gz
-            sha256: bb05b738298ae73e7130e2913ed002b49d94cd1cea508e63be1928fe47770b32
-            x-checker-data:
-              type: anitya
-              project-id: 325951
-              url-template: https://github.com/tesseract-ocr/tessdata_best/archive/refs/tags/$version.tar.gz
 
         # https://github.com/flathub/org.gnome.Gnote/blob/11d75091558cef2cc9658a04da7ad71d63581d3f/gtkmm.json#L3
         # NB: all versions are pinned below a coordinated ABI break
@@ -419,6 +386,46 @@ modules:
               type: anitya
               project-id: 10649
               url-template: https://libzip.org/download/libzip-$version.tar.xz
+
+      - name: tesseract
+        buildsystem: autotools
+        config-opts:
+          - --disable-graphics
+        modules:
+          - name: libleptonica
+            buildsystem: autotools
+            sources:
+              - type: archive
+                url: https://github.com/DanBloomberg/leptonica/releases/download/1.83.0/leptonica-1.83.0.tar.gz
+                sha256: 206591dd58cf84ef380836dad133b58c9d1af92491f5a9825c346a162044bcfe
+                x-checker-data:
+                  type: anitya
+                  project-id: 1549
+                  url-template: https://github.com/DanBloomberg/leptonica/releases/download/$version/leptonica-$version.tar.gz
+
+        sources:
+          - type: archive
+            url: https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.3.0.tar.gz
+            sha256: 7e70870f8341e5ea228af2836ce79a36eefa11b01b56177b4a8997f330c014b8
+            x-checker-data:
+              type: anitya
+              project-id: 4954
+              url-template: https://github.com/tesseract-ocr/tesseract/archive/refs/tags/$version.tar.gz
+
+      - name: tessdata
+        buildsystem: simple
+        build-commands:
+          - rm -rf ${FLATPAK_DEST}/share/tessdata
+          - mkdir -p ${FLATPAK_DEST}/share/tessdata
+          - cp -av * ${FLATPAK_DEST}/share/tessdata/
+        sources:
+          - type: archive
+            url: https://github.com/tesseract-ocr/tessdata_best/archive/refs/tags/4.1.0.tar.gz
+            sha256: bb05b738298ae73e7130e2913ed002b49d94cd1cea508e63be1928fe47770b32
+            x-checker-data:
+              type: anitya
+              project-id: 325951
+              url-template: https://github.com/tesseract-ocr/tessdata_best/archive/refs/tags/$version.tar.gz
 
     sources:
       - type: git
