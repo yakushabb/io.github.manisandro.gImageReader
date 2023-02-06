@@ -1,0 +1,13 @@
+diff --git a/gtk/data/MainWindow.ui b/gtk/data/MainWindow.ui
+index 75d00f8..846afee 100644
+--- a/gtk/data/MainWindow.ui
++++ b/gtk/data/MainWindow.ui
+@@ -1470,7 +1470,7 @@
+     <property name="website">https://github.com/manisandro/gImageReader/</property>
+     <property name="authors">Sandro Mani &lt;manisandro@gmail.com&gt;</property>
+     <property name="translator-credits">the community using Weblate https://hosted.weblate.org/projects/gimagereader/translations/</property>
+-    <property name="logo-icon-name">gimagereader</property>
++    <property name="logo-icon-name">io.github.manisandro.gImageReader</property>
+     <property name="license-type">gpl-3-0</property>
+     <child internal-child="vbox">
+       <object class="GtkBox" id="boxAbout">

@@ -430,3 +430,5 @@ modules:
           project-id: 8889
           stable-only: true
           tag-template: v$version
+      - type: patch
+        path: patches/fix-about-dialog-logo.patch
