@@ -286,7 +286,7 @@ modules:
                 sha256: 5b875a5753ce593274d0c6e803af6300973020c5443905999aba96ed3cef1545
                 x-checker-data:
                   type: anitya
-                  project-id: 325948
+                  project-id: 353541
                   stable-only: true
                   url-template: https://downloads.sourceforge.net/gtkspell/gtkspellmm-$version.tar.xz
 
