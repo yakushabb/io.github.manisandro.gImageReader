@@ -67,8 +67,8 @@ modules:
           - ./b2 -j $FLATPAK_BUILDER_N_JOBS install
         sources:
           - type: archive
-            url: https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_1_82_0.tar.bz2
-            sha256: a6e1ab9b0860e6a2881dd7b21fe9f737a095e5f33a3a874afc6a345228597ee6
+            url: https://boostorg.jfrog.io/artifactory/main/release/1.83.0/source/boost_1_83_0.tar.bz2
+            sha256: 6478edfe2f3305127cffe8caf73ea0176c53769f4bf1585be237eb30798c3b8e
             x-checker-data:
               type: anitya
               project-id: 6845
@@ -140,9 +140,9 @@ modules:
         # NB: all versions are pinned below a coordinated ABI break
       - name: gtkmm
         sources:
-          - sha256: 1d7a35af9c5ceccacb244ee3c2deb9b245720d8510ac5c7e6f4b6f9947e6789c
+          - sha256: d2940c64922e5b958554b23d4c41d1839ea9e43e0d2e5b3819cfb46824a098c4
             type: archive
-            url: https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.7.tar.xz
+            url: https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.8.tar.xz
             x-checker-data:
               type: gnome
               name: gtkmm
