@@ -209,9 +209,9 @@ modules:
               - /lib/pkgconfig
           - name: cairomm
             sources:
-              - sha256: 4749d25a2b2ef67cc0c014caaf5c87fa46792fc4b3ede186fb0fc932d2055158
+              - sha256: 70136203540c884e89ce1c9edfb6369b9953937f6cd596d97c78c9758a5d48db
                 type: archive
-                url: https://www.cairographics.org/releases/cairomm-1.14.4.tar.xz
+                url: https://www.cairographics.org/releases/cairomm-1.14.5.tar.xz
                 x-checker-data:
                   type: anitya
                   project-id: 7959
