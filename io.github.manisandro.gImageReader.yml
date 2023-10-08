@@ -1,6 +1,6 @@
 app-id: io.github.manisandro.gImageReader
 runtime: org.gnome.Platform
-runtime-version: '44'
+runtime-version: '45'
 sdk: org.gnome.Sdk
 command: gimagereader-gtk
 rename-desktop-file: gimagereader-gtk.desktop
@@ -18,7 +18,6 @@ finish-args:
   - --share=ipc
   - --socket=fallback-x11
   - --socket=wayland
-  - --device=dri
   - --talk-name=org.a11y.Bus
   - --own-name=org.gnome.gimagereader.*
   - --talk-name=org.gtk.vfs.*
@@ -40,7 +39,7 @@ finish-args:
 
 modules:
   - name: gimagereader
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     cleanup:
       - /include
       - /lib/pkgconfig
@@ -51,7 +50,6 @@ modules:
       - /lib/*.la
       - '*.a'
     config-opts:
-      - -DCMAKE_INSTALL_PREFIX='/app'
       - -DINTERFACE_TYPE=gtk
       - -DENABLE_VERSIONCHECK=0
     post-install:
@@ -381,7 +379,7 @@ modules:
         sources:
           - type: archive
             url: https://libzip.org/download/libzip-1.10.1.tar.xz
-            sha256: 6d9ad40d2f9cd204c9e28c8a406e46289c0e887533c5174f4a38cf504fe1870e
+            sha256: dc3c8d5b4c8bbd09626864f6bcf93de701540f761d76b85d7c7d710f4bd90318
             x-checker-data:
               type: anitya
               project-id: 10649
