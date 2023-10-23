@@ -1,6 +1,7 @@
 app-id: io.github.manisandro.gImageReader
 runtime: org.gnome.Platform
-runtime-version: '45'
+# runtime 45 causes application crashes: https://github.com/flathub/io.github.manisandro.gImageReader/issues/31
+runtime-version: '44'
 sdk: org.gnome.Sdk
 command: gimagereader-gtk
 rename-desktop-file: gimagereader-gtk.desktop
