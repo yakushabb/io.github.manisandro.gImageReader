@@ -38,18 +38,35 @@ finish-args:
   # Scanners access
   - --device=all
 
+cleanup:
+  - /include
+  - /lib/atkmm-1.6
+  - /lib/cmake
+  - /lib/cairomm-1.0
+  - /lib/girepository-1.0
+  - /lib/gdkmm-3.0
+  - /lib/giomm-2.4
+  - /lib/glibmm-2.4
+  - /lib/gtkmm-3.0
+  - /lib/libglibmm_generate_extra_defs*
+  - /lib/openjpeg-*
+  - /lib/pangomm-1.4
+  - /lib/pkgconfig
+  - /lib/sigc++-2.0
+  - /man
+  - /share/aclocal
+  - /share/doc
+  - /share/gir-1.0
+  - /share/gtk-doc
+  - /share/man
+  - /share/pkgconfig
+  - /share/vala
+  - '*.la'
+  - '*.a'
+
 modules:
   - name: gimagereader
     buildsystem: cmake-ninja
-    cleanup:
-      - /include
-      - /lib/pkgconfig
-      - /man
-      - /share/gtk-doc
-      - /share/man
-      - /share/pkgconfig
-      - /lib/*.la
-      - '*.a'
     config-opts:
       - -DINTERFACE_TYPE=gtk
       - -DENABLE_VERSIONCHECK=0
@@ -110,7 +127,6 @@ modules:
         cleanup:
           - /bin
           - /share
-          - /lib/pkgconfig
         config-opts:
           - -DPODOFO_BUILD_LIB_ONLY=1
           - -DPODOFO_BUILD_SHARED=1
@@ -152,17 +168,6 @@ modules:
           - -Dmaintainer-mode=false
           - -Dbuild-demos=false
           - -Dbuild-tests=false
-        cleanup:
-          - '*.a'
-          - '*.la'
-          - /include
-          - /lib/gdkmm-3.0
-          - /lib/gtkmm-3.0
-          - /lib/pkgconfig
-          - /man
-          - /share/aclocal
-          - /share/man
-          - /share/pkgconfig
         modules:
           - name: sigc++
             sources:
@@ -179,11 +184,6 @@ modules:
             buildsystem: meson
             config-opts:
               - -Dbuild-examples=false
-            cleanup:
-              - '*.la'
-              - /include/sigc++-2.0
-              - /lib/pkgconfig
-              - /lib/sigc++-2.0
           - name: glibmm
             sources:
               - sha256: fe02c1e5f5825940d82b56b6ec31a12c06c05c1583cfe62f934d0763e1e542b3
@@ -198,14 +198,6 @@ modules:
             buildsystem: meson
             config-opts:
               - -Dbuild-examples=false
-            cleanup:
-              - '*.la'
-              - /include/glibmm-2.4
-              - /include/giomm-2.4
-              - /lib/glibmm-2.4
-              - /lib/giomm-2.4
-              - /lib/libglibmm_generate_extra_defs*
-              - /lib/pkgconfig
           - name: cairomm
             sources:
               - sha256: 70136203540c884e89ce1c9edfb6369b9953937f6cd596d97c78c9758a5d48db
@@ -220,11 +212,6 @@ modules:
             buildsystem: meson
             config-opts:
               - -Dbuild-examples=false
-            cleanup:
-              - '*.la'
-              - /include/cairomm-1.0
-              - /lib/cairomm-1.0
-              - /lib/pkgconfig
           - name: pangomm
             sources:
               - sha256: b92016661526424de4b9377f1512f59781f41fb16c9c0267d6133ba1cd68db22
@@ -236,11 +223,6 @@ modules:
                   versions:
                     <: '2.47'
             buildsystem: meson
-            cleanup:
-              - '*.la'
-              - /include/pangomm-1.4
-              - /lib/pangomm-1.4
-              - /lib/pkgconfig
           - name: atkmm
             sources:
               - sha256: 0a142a8128f83c001efb8014ee463e9a766054ef84686af953135e04d28fdab3
@@ -252,11 +234,6 @@ modules:
                   versions:
                     <: '2.35'
             buildsystem: meson
-            cleanup:
-              - '*.la'
-              - /include/atkmm-1.6
-              - /lib/atkmm-1.6
-              - /lib/pkgconfig
 
       - name: gtksourceviewmm
         config-opts:
@@ -333,9 +310,6 @@ modules:
             builddir: true
             cleanup:
               - /bin
-              - /include
-              - /lib/openjpeg-*
-              - /lib/pkgconfig
             sources:
               - type: archive
                 url: https://github.com/uclouvain/openjpeg/archive/v2.5.2.tar.gz
@@ -345,9 +319,6 @@ modules:
                   project-id: 2550
                   stable-only: true
                   url-template: https://github.com/uclouvain/openjpeg/archive/v$version.tar.gz
-        cleanup:
-          - /include
-          - /lib/pkgconfig
         sources:
           - type: archive
             url: https://poppler.freedesktop.org/poppler-24.06.0.tar.xz
