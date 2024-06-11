@@ -413,3 +413,6 @@ modules:
           tag-template: v$version
       - type: patch
         path: patches/fix-about-dialog-logo.patch
+      - type: patch
+        path: patches/fix_appdata.patch
+

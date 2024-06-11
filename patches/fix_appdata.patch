@@ -1,0 +1,28 @@
+From c174eef2e42c053be6d6ed4b94d49c914c170019 Mon Sep 17 00:00:00 2001
+From: Sabri Ünal <yakushabb@gmail.com>
+Date: Tue, 11 Jun 2024 20:05:14 +0300
+Subject: [PATCH] appdata: Update appdata
+
+- Fix appdata papercuts
+---
+ data/gimagereader.appdata.xml.in | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/data/gimagereader.appdata.xml.in b/data/gimagereader.appdata.xml.in
+index 4e058f9..892a7f9 100644
+--- a/data/gimagereader.appdata.xml.in
++++ b/data/gimagereader.appdata.xml.in
+@@ -10,10 +10,6 @@
+  <name xml:lang="cs_CZ">gImageReader</name>
+  <name xml:lang="hu">gKépolvasó</name>
+  
+- <comment>Optical character recognition using Tesseract</comment>
+- <comment xml:lang="cs_CZ">Optické rozpoznávání znaků pomocí Tesseract</comment>
+- <comment xml:lang="hu">Optikai karakterfelismerés a Tesseact segítségével</comment>
+- 
+  <summary>A graphical (@INTERFACE_TYPE@) frontend to tesseract-ocr</summary>
+  <summary xml:lang="cs_CZ">Grafická (@INTERFACE_TYPE@) nadstavba pro engine tesseract-ocr</summary>
+  <summary xml:lang="hu">Grafikus (@INTERFACE_TYPE@) előtérbeli tesseract-ocr alkalmazáshoz</summary>
+--
+libgit2 1.7.2
+
