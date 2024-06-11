@@ -98,8 +98,8 @@ modules:
         sources:
           - type: git
             url: https://gitlab.com/sane-project/backends.git
-            tag: 1.3.0
-            commit: 7088afe04dc83395af599b6c224b020a142e64d8
+            tag: 1.3.1
+            commit: 3ff55fd8ee04ae459e199088ebe11ac979671d0e
             x-checker-data:
               type: anitya
               project-id: 4760
@@ -139,9 +139,9 @@ modules:
         # NB: all versions are pinned below a coordinated ABI break
       - name: gtkmm
         sources:
-          - sha256: d2940c64922e5b958554b23d4c41d1839ea9e43e0d2e5b3819cfb46824a098c4
+          - sha256: 30d5bfe404571ce566a8e938c8bac17576420eb508f1e257837da63f14ad44ce
             type: archive
-            url: https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.8.tar.xz
+            url: https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.9.tar.xz
             x-checker-data:
               type: gnome
               name: gtkmm
@@ -186,9 +186,9 @@ modules:
               - /lib/sigc++-2.0
           - name: glibmm
             sources:
-              - sha256: 5358742598181e5351d7bf8da072bf93e6dd5f178d27640d4e462bc8f14e152f
+              - sha256: fe02c1e5f5825940d82b56b6ec31a12c06c05c1583cfe62f934d0763e1e542b3
                 type: archive
-                url: https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.6.tar.xz
+                url: https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.7.tar.xz
                 x-checker-data:
                   type: gnome
                   name: glibmm
@@ -338,8 +338,8 @@ modules:
               - /lib/pkgconfig
             sources:
               - type: archive
-                url: https://github.com/uclouvain/openjpeg/archive/v2.5.0.tar.gz
-                sha256: 0333806d6adecc6f7a91243b2b839ff4d2053823634d4f6ed7a59bc87409122a
+                url: https://github.com/uclouvain/openjpeg/archive/v2.5.2.tar.gz
+                sha256: 90e3896fed910c376aaf79cdd98bdfdaf98c6472efd8e1debf0a854938cbda6a
                 x-checker-data:
                   type: anitya
                   project-id: 2550
@@ -350,8 +350,8 @@ modules:
           - /lib/pkgconfig
         sources:
           - type: archive
-            url: https://poppler.freedesktop.org/poppler-24.02.0.tar.xz
-            sha256: 19187a3fdd05f33e7d604c4799c183de5ca0118640c88b370ddcf3136343222e
+            url: https://poppler.freedesktop.org/poppler-24.06.0.tar.xz
+            sha256: 0cdabd495cada11f6ee9e75c793f80daf46367b66c25a63ee8c26d0f9ec40c76
             x-checker-data:
               type: anitya
               project-id: 3686
@@ -406,8 +406,8 @@ modules:
 
         sources:
           - type: archive
-            url: https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.3.4.tar.gz
-            sha256: 141afc12b34a14bb691a939b4b122db0d51bd38feda7f41696822bacea7710c7
+            url: https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.4.0.tar.gz
+            sha256: 30ceffd9b86780f01cbf4eaf9b7fc59abddfcbaf5bbd52f9a633c6528cb183fd
             x-checker-data:
               type: anitya
               project-id: 4954
